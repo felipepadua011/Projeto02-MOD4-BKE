@@ -4,7 +4,6 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from '../prisma/prisma.service';
 import { Usuario, Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import { JwtPayload } from 'src/auth/jwt.strategy';
 
 @Injectable()
 export class UsuariosService {
@@ -30,20 +29,6 @@ export class UsuariosService {
 
     if (!senhaIgual) {
       throw new HttpException('Senha invalida', HttpStatus.UNAUTHORIZED);
-    }
-
-    return user;
-  }
-
-  async validateUser(payload: JwtPayload): Promise<Usuario> {
-    const user = await this.prisma.usuario.findFirst({
-      where: {
-        email : payload.email,
-      }
-    });
-
-    if(!user){
-      throw new HttpException('Token invalido', HttpStatus.UNAUTHORIZED);
     }
 
     return user;
