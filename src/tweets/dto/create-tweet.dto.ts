@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { IsNotEmpty, IsInt, IsString } from 'class-validator';
 
 export class CreateTweetDto {
