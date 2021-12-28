@@ -1,4 +1,5 @@
-import { IsNotEmpty, IsInt, IsString } from 'class-validator';
+/* eslint-disable prettier/prettier */
+import { IsNotEmpty, IsInt } from 'class-validator';
 
 export class CreateSeguindoDto {
 

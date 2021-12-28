@@ -13,11 +13,12 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
 @Controller('usuarios')
 export class UsuariosController {
+  // eslint-disable-next-line prettier/prettier
   constructor(private readonly usuariosService: UsuariosService) {}
 
   @Post()
   create(@Body() createUsuarioDto: CreateUsuarioDto) {
-    // return this.usuariosService.create(createUsuarioDto);
+    return this.usuariosService.create(createUsuarioDto);
   }
 
   @Get()

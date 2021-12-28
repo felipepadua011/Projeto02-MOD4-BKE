@@ -6,14 +6,18 @@ import { PrismaModule } from './prisma/prisma.module';
 import { SeguidoresModule } from './seguidores/seguidores.module';
 import { SeguindoModule } from './seguindo/seguindo.module';
 import { TweetsModule } from './tweets/tweets.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     UsuariosModule,
-    PrismaModule,   
-    SeguidoresModule, SeguindoModule, TweetsModule,
+    PrismaModule,
+    SeguidoresModule,
+    SeguindoModule,
+    TweetsModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],  
+  providers: [AppService],
 })
 export class AppModule {}
