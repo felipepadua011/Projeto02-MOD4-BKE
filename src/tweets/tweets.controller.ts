@@ -5,30 +5,31 @@ import { UpdateTweetDto } from './dto/update-tweet.dto';
 
 @Controller('tweets')
 export class TweetsController {
+  // eslint-disable-next-line prettier/prettier
   constructor(private readonly tweetsService: TweetsService) {}
 
   @Post()
   create(@Body() createTweetDto: CreateTweetDto) {
-    return this.tweetsService.create(createTweetDto);
+    return this.tweetsService.createPrisma(createTweetDto);
   }
 
   @Get()
   findAll() {
-    return this.tweetsService.findAll();
+    return this.tweetsService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tweetsService.findOne(+id);
+    return this.tweetsService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTweetDto: UpdateTweetDto) {
-    return this.tweetsService.update(+id, updateTweetDto);
+    return this.tweetsService.updatePrisma(+id, updateTweetDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tweetsService.remove(+id);
+    return this.tweetsService.removePrisma(+id);
   }
 }
