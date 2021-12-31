@@ -5,6 +5,7 @@ import { UpdateSeguidoreDto } from './dto/update-seguidore.dto';
 
 @Controller('seguidores')
 export class SeguidoresController {
+  // eslint-disable-next-line prettier/prettier
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
   @Post()
