@@ -51,20 +51,23 @@ export class UsuariosService {
     return user;
   }
 
-  findAll() {
-    return `This action returns all usuarios`;
+  async findAllPrisma(): Promise<Usuario[]> {
+    return await this.prisma.usuario.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+  async findOnePrisma(id: number): Promise<Usuario> {
+    return await this.prisma.usuario.findUnique({ where: {id}});
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  update(id: number, _updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+  async updatePrisma(id: number, _updateUsuarioDto: UpdateUsuarioDto): Promise<Usuario> {
+    return  await this.prisma.usuario.update({
+      data:{..._updateUsuarioDto},
+      where:{id}
+  });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
+  async removePrisma(id: number) {
+    return await this.prisma.usuario.delete({ where: {id}});
   }
 }
+

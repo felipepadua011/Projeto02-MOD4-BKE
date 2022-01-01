@@ -1,26 +1,36 @@
 import { Injectable } from '@nestjs/common';
+import { Seguindo } from '@prisma/client';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateSeguindoDto } from './dto/create-seguindo.dto';
 import { UpdateSeguindoDto } from './dto/update-seguindo.dto';
 
 @Injectable()
 export class SeguindoService {
-  create(createSeguindoDto: CreateSeguindoDto) {
-    return 'This action adds a new seguindo';
+  // eslint-disable-next-line prettier/prettier
+  constructor(private prisma: PrismaService) {}
+
+  async createPrisma(createSeguindoDto: CreateSeguindoDto): Promise<Seguindo> {
+    return await this.prisma.seguindo.create({
+      data: { ...createSeguindoDto },
+    });
   }
 
-  findAll() {
-    return `This action returns all seguindo`;
+  async findAllPrisma(): Promise<Seguindo[]> {
+    return await this.prisma.seguindo.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} seguindo`;
+  async findOnePrisma(id: number): Promise<Seguindo> {
+    return await this.prisma.seguindo.findUnique({ where: {id}});
   }
 
-  update(id: number, updateSeguindoDto: UpdateSeguindoDto) {
-    return `This action updates a #${id} seguindo`;
+  async updatePrisma(id: number, _updateSeguindoDto: UpdateSeguindoDto): Promise<Seguindo> {
+    return  await this.prisma.seguindo.update({
+      data:{..._updateSeguindoDto},
+      where:{id}
+  });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} seguindo`;
+  async removePrisma(id: number) {
+    return await this.prisma.seguindo.delete({ where: {id}});
   }
 }
