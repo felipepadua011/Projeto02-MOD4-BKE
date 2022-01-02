@@ -376,7 +376,6 @@ npx prisma studio
   "emoji":         //String? 
   "curtidas":      //Number
   "usuarioid":     //Number 
-  
 ```
 
 ![tweetsp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweetsp.png)
@@ -390,7 +389,6 @@ npx prisma studio
 
 ```javascript
  "usuarioid": 3,           //Number
-
 ```
 
 ![seguidoresp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidoresp.png)
@@ -404,9 +402,121 @@ npx prisma studio
 
 ```javascript
  "usuarioid": 3,           //Number
-
 ```
 
 ![seguindop](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindop.png)
 
 * **Todos os `id` são autoincrement (criado sozinho, não precisa passar)**
+
+
+
+## JWT
+
+Para que o jwt possa ser iniciado, fazer a criação manual da pasta `auth` dentro de `src`.
+
+Este comando cria uma nova pasta e dentro dela, o novo AuthModule. Além disso, este módulo é importado por padrão no AppModule.
+
+```bash
+nest g m auth
+```
+
+Este comando cria a classe AuthService e fornece automaticamente este serviço dentro do AuthModule.
+
+```bash
+nest g s auth
+```
+
+Este comando cria a classe AuthController e a adiciona automaticamente à propriedade dos controladores no AuthModule.
+
+```bash
+nest g c auth
+```
+
+A aplicação agora está pronta para registrar usuários e autenticá-los com o JWT.
+
+
+
+## SWAGGER
+
+O Swagger é uma ferramenta que facilita os testes de sua api.
+
+Para começar a implementar ele em sua api, tem de usar:
+
+```bash
+npm install --save @nestjs/swagger swagger-ui-express
+```
+
+Após isso, abra a pasta `main.ts` e adicione as seguintes informações:
+
+```bash
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const config = new DocumentBuilder()
+    .setTitle('Api')
+    .setDescription('Api')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);  // -> Esse "api" é o nome que será passado na url para usar o swagger.
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+Após isso, apenas inicie seu projeto, utilizando:
+
+```bash
+npm run start:dev
+```
+
+Assim que for iniciada a sua api, basta entrar em `http://localhost:3000/api/` -> o "api" é configurado no `main.ts` caso queria mudar basta alterar onde foi passado logo a cima.
+
+```bash
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const config = new DocumentBuilder()
+    .setTitle('Api')
+    .setDescription('Api')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);  // -> Esse "api" é o nome que será passado na url para usar o swagger.
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+<img src="https://cdn.discordapp.com/attachments/478608140993167360/926939969661042749/unknown.png" alt="swagger" style="zoom:60%;" />		
+
+Caso fique assim, tudo pronto, seu swagger está rodando perfeitamente!!
+
+
+
+## Trabalho Realizado em Dupla:
+
+###  Felipe Pereira de Padua  ->  Entre em contato por: 
+
+**`Email:`**  fpadua18@gmail.com
+
+### **`Instagram:`**  www.instagram.com/padua.felipe/
+
+### Wellington Nascimento ->  Entre em contato por: 
+
+**`Email:`** wellingtonnascimento3@outlook.com
+
+### **`Instagram:`**  www.instagram.com/wetto_nascimento/
+
+#### Esperamos ter ajudado na compreensão básica de como funciona este projeto e o que consta em suas dependencias internas.
+
