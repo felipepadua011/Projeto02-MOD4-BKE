@@ -514,7 +514,7 @@ Caso fique assim, tudo pronto, seu swagger está rodando perfeitamente!!
 
 ### Wellington Nascimento ->  Entre em contato por: 
 
-**`Email:`** 
+**`Email:`** wellingtonnascimento3@outlook.com
 
 ### **`Instagram:`**  www.instagram.com/wetto_nascimento/
 
