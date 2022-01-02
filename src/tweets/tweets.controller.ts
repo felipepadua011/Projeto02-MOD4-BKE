@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { TweetsService } from './tweets.service';
 import { CreateTweetDto } from './dto/create-tweet.dto';
 import { UpdateTweetDto } from './dto/update-tweet.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('tweets')
 export class TweetsController {
@@ -9,6 +10,7 @@ export class TweetsController {
   constructor(private readonly tweetsService: TweetsService) {}
 
   @Post()
+  @UseGuards(AuthGuard('jwt'))
   create(@Body() createTweetDto: CreateTweetDto) {
     return this.tweetsService.createPrisma(createTweetDto);
   }
