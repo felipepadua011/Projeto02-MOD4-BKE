@@ -185,13 +185,13 @@ npx prisma studio
 
 **Temos 4 rotas principais:**
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\post-usuario.png" alt="post-usuario" style="zoom:60%;" />
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026551491547166/post-usuario.png" alt="post-usuario" style="zoom:60%;" />
 
-![tweets](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweets.png)
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026554746314822/tweets.png" alt="post-usuario" style="zoom:60%;" />
 
-![seguidores](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidores.png)
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026552737259570/seguidores.png" alt="post-usuario" style="zoom:60%;" />
 
-![seguindo](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindo.png)
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026553240571935/seguindo.png" alt="post-usuario" style="zoom:60%;" />
 
 **Dentro de cada rota temos um CRUD completo criado com os Decorators:**
 
@@ -348,7 +348,7 @@ npx prisma studio
 
 **Post  rota** `/usuarios` , **no Thunder:**	
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\post-usuario.png" alt="post-usuario" style="zoom:60%;" />		 
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026551491547166/post-usuario.png" alt="post-usuario" style="zoom:60%;" />		 
 
 - ​	**Usado para adicionar um usuario no banco de dados local.**
 - ​    **Para adicionar um usuario dentro do banco, necessita passar todos os dados com suas devidas informações a seguir no exemplo:( id, createdAt e updatedAt não precisa passar, pois são autoincrement )**
@@ -362,11 +362,13 @@ npx prisma studio
   "nascimento":    //String 
 ```
 
-![postthamy](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\postthamy.png)
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026551105650718/postthamy.png" alt="post-usuario" style="zoom:60%;" />
 
-**Post  rota** `/tweets , **no Thunder:**
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweets.png" alt="tweets" style="zoom:60%;" />			 
+
+**Post  rota** `/tweets` , **no Thunder:**
+
+<img src="https://cdn.discordapp.com/attachments/895482892627607602/927026554746314822/tweets.png" alt="tweets" style="zoom:60%;" />			 
 
 - ​	**Usado para postar uma mensagem.**
 - ​    **Para adicionar um tweets, necessita passar todos os dados com suas devidas informações a seguir no exemplo:**
@@ -378,11 +380,11 @@ npx prisma studio
   "usuarioid":     //Number 
 ```
 
-![tweetsp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweetsp.png)
+![tweetsp](https://cdn.discordapp.com/attachments/895482892627607602/927026554939265074/tweetsp.png)
 
 **Post  rota** `/seguidores` , **no Thunder:**
 
-![seguidores](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidores.png)		 
+![seguidores](https://cdn.discordapp.com/attachments/895482892627607602/927026552737259570/seguidores.png)		 
 
 - ​	**Usado para adicionar um seguidor ao usuario ja existente no banco.**
 - ​    **Para adicionar um seguidor, necessita passar o ID do usuario ja existente exemplo:**
@@ -391,11 +393,11 @@ npx prisma studio
  "usuarioid": 3,           //Number
 ```
 
-![seguidoresp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidoresp.png)
+![seguidoresp](https://cdn.discordapp.com/attachments/895482892627607602/927026553035046913/seguidoresp.png)
 
-**Post  rota** `/seguindo , **no Thunder:**	
+**Post  rota** `/seguindo` , **no Thunder:**	
 
-![seguindo](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindo.png)		 
+![seguindo](https://cdn.discordapp.com/attachments/895482892627607602/927026553240571935/seguindo.png)		 
 
 - ​	**Usado para informar quem o usuario esta seguindo** 
 - ​    **Para adicionar quem o usuario esta seguindo, necessita passar o ID do usuario ja existente, exemplo:**
@@ -404,7 +406,7 @@ npx prisma studio
  "usuarioid": 3,           //Number
 ```
 
-![seguindop](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindop.png)
+![seguindop](https://cdn.discordapp.com/attachments/895482892627607602/927026553462874132/seguindop.png)
 
 * **Todos os `id` são autoincrement (criado sozinho, não precisa passar)**
 
